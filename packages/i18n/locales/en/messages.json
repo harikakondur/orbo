@@ -1,11 +1,11 @@
 {
   "extensionDescription": {
     "description": "Extension description",
-    "message": "Chrome extension boilerplate developed with Vite, React and Typescript"
+    "message": "chrome extension to reduce consumerism and incentivize personal finance goals"
   },
   "extensionName": {
-    "description": "Extension name",
-    "message": "Chrome extension boilerplate"
+    "description": "stopshopping",
+    "message": "stopshopping"
   },
   "toggleTheme": {
     "message": "Toggle theme"
