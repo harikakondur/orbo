@@ -1,6 +1,9 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { toggleTheme } from '@src/toggleTheme';
 
 console.log('content script loaded');
+
 function isCartPage(): boolean {
   const url = window.location.href;
   return url.includes('cart') || url.includes('checkout') || url.includes('basket');
@@ -8,14 +11,17 @@ function isCartPage(): boolean {
 
 if (isCartPage()) {
   console.log('You are on a cart, checkout, or basket page!');
-  showSidePanel();
+  showWaitMessage();
 } else {
   console.log('You are not on a relevant page.');
 }
 
-function showSidePanel(): void {
-  console.log('in show side panel');
-  // Send a message to the background script to enable the side panel
-  chrome.runtime.sendMessage({ action: 'showSidePanel' });
+function showWaitMessage(): void {
+  // Add a red filter to the page
+  // const overlay = document.createElement("div")
+  // overlay.className = "fixed w-screen h-screen left-0 top-0 bg-red-500/10"
+  // document.body.appendChild(overlay)
+  // console.log(overlay)
 }
+
 void toggleTheme();
