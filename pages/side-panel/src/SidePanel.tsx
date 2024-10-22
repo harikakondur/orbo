@@ -33,10 +33,10 @@ const SidePanel = () => {
           frameBorder="0"></iframe>
 
         <div className="mt-4 flex flex-col items-center w-full">
-          <button className="bg-red-300 hover:bg-green-700 text-zinc font-bold py-2 px-4 rounded w-full max-w-md mb-2">
+          <button className="bg-red-300 hover:bg-red-500 text-zinc font-bold py-2 px-4 rounded w-full max-w-md mb-2">
             Yes, I want to buy this
           </button>
-          <button className="bg-green-300 hover:bg-red-700 text-zinc font-bold py-2 px-4 rounded w-full max-w-md">
+          <button className="bg-green-300 hover:bg-green-500 text-zinc font-bold py-2 px-4 rounded w-full max-w-md">
             No, invest
           </button>
         </div>
