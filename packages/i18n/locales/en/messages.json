@@ -4,8 +4,8 @@
     "message": "chrome extension to reduce consumerism and incentivize personal finance goals"
   },
   "extensionName": {
-    "description": "stopshopping",
-    "message": "stopshopping"
+    "description": "detour",
+    "message": "detour"
   },
   "toggleTheme": {
     "message": "Toggle theme"
