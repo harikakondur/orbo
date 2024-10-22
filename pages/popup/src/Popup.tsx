@@ -36,16 +36,16 @@ const Popup = () => {
   };
 
   return (
-    <div className={`App ${isLight ? 'bg-slate-50' : 'bg-gray-800'}`}>
-      <header className={`App-header ${isLight ? 'text-gray-900' : 'text-gray-100'}`}>
-        <div>Hello, Welcome to xyz !</div>
-
+    <div className="bg-green-600 rounded-lg shadow-lg h-full flex flex-col justify-center items-center">
+      <header className="bg-green-600 mb-4">
+        <div className="text-lg font-bold text-white mb-2">Detour</div>
+        <div className="text-sm text-white mb-4">Build a stable future step by step</div>
         {/* Button to open the Typeform */}
-        <button onClick={openTypeform} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button
+          onClick={openTypeform}
+          className="bg-blue-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-600 transition duration-300">
           Get Started
         </button>
-
-        <button>Lets think about it</button>
       </header>
     </div>
   );
