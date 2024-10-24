@@ -2,8 +2,8 @@ import '@src/SidePanel.css';
 import { useStorage, withErrorBoundary, withSuspense } from '@extension/shared';
 import { exampleThemeStorage } from '@extension/storage';
 import { useState } from 'react';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const SidePanel = () => {
   const theme = useStorage(exampleThemeStorage);
@@ -30,13 +30,13 @@ const SidePanel = () => {
     if (selectedOption === 'yes') {
       return (
         <div className="w-full max-w-md text-center">
-          <div className="flex justify-center items-center mb-4 space-x-4">
+          <div className="flex justify-center items-center mb-4 space-x-4 p-2">
             {' '}
             {/* Adds space between columns */}
             {/* Circular Progress Bar for Sustainability Score */}
             <div className="flex flex-col items-center">
               <span className="text-xs font-semibold">Sustainability Score</span> {/* Metric Title */}
-              <p className="text-lg font-bold">3.9/5</p> {/* Figure */}
+              <p className="text-lg font-bold">3.9/5.0</p> {/* Figure */}
             </div>
             {/* Other Information 1 */}
             <div className="flex flex-col items-center">
@@ -52,7 +52,7 @@ const SidePanel = () => {
 
           {/* alternatives */}
 
-          <h2 className="text-md font-semibold mb-4">Sustainable Alternatives Near You</h2>
+          <h2 className="text-md font-semibold mb-2">Sustainable Alternatives Near You</h2>
 
           <iframe
             width="100%"
@@ -67,9 +67,9 @@ const SidePanel = () => {
     } else if (selectedOption === 'no') {
       return (
         <div className="w-full max-w-md text-center">
-          <h2 className="text-lg font-bold">Invest in Your Future</h2>
+          <h2 className="text-lg font-bold">Invest in Harika</h2>
           <p className="text xs italic pb-2">One step closer to building a better future!</p>
-          <div style={{ width: '90%', height: '200px' }} className="py-2 ml-4 pb-4">
+          <div style={{ width: '90%', height: '220px' }} className="py-2 ml-4 pb-4">
             <ResponsiveContainer>
               <LineChart data={data}>
                 <CartesianGrid strokeDasharray="4 4" />
@@ -87,11 +87,11 @@ const SidePanel = () => {
           </div>
 
           {/* Investment options  */}
-          <div className="flex justify-center space-x-2">
-            <button className="bg-zinc-900 hover:bg-blue-700 text-white text-xs p-2 rounded-lg">
+          <div className="flex justify-between w-full space-x-2">
+            <button className="flex-grow border border-zinc-800 text-zinc text-xs p-2 rounded-xl">
               Add to Savings Account
             </button>
-            <button className="bg-zinc-900 hover:bg-green-700 text-white  text-xs p-2 rounded-lg">
+            <button className="flex-grow border border-zinc-900 text zinc text-xs p-2 rounded-xl ">
               Add to Investment Fund
             </button>
           </div>
@@ -105,7 +105,7 @@ const SidePanel = () => {
   const iframeHeight = selectedOption ? '350px' : '700px';
 
   return (
-    <div className="bg-slate-50">
+    <div className="">
       <header className="text-gray-900">
         <iframe
           id="embed-preview-iframe"
@@ -124,13 +124,15 @@ const SidePanel = () => {
         <div className="mt-4 flex flex-col items-center w-full">
           <button
             onClick={() => setSelectedOption('yes')}
-            className="bg-red-700 text-white font-bold py-2 px-4 rounded-xl w-full max-w-md mb-2">
-            Yes, I want to buy this
+            className={`border py-2 px-4 rounded-2xl w-full max-w-md mb-2 
+              ${selectedOption === 'yes' ? 'bg-red-600 text-white' : 'border-red-600 text-red-600'}`}>
+            Yes, I want to spend money
           </button>
           <button
             onClick={() => setSelectedOption('no')}
-            className="bg-green-600  text-white font-bold py-2 px-4 rounded-xl w-full max-w-md">
-            No, invest
+            className={`border py-2 px-4 rounded-2xl w-full max-w-md 
+              ${selectedOption === 'no' ? 'bg-green-600 text-white' : 'border-green-600 text-green-600'}`}>
+            No, Invest
           </button>
         </div>
 
